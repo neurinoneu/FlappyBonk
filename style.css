@@ -1,0 +1,68 @@
+body {
+    /* back.png arka plan resmi */
+    background: url('img/back.png') center center no-repeat !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    
+    /* Fallback renk (resim yüklenene kadar) */
+    background-color: #FF6B35 !important;
+    
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    height: 100% !important;
+    
+    /* Canvas'ı tam ortaya almak için flexbox */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    /* Hafif overlay efekti (isteğe bağlı) */
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Tilki temalı animasyon */
+@keyframes patternMove {
+    0% { background-position: 0px 0px, 0px 0px, 0px 0px; }
+    50% { background-position: 30px 30px, 20px 20px, 15px 15px; }
+    100% { background-position: 60px 60px, 40px 40px, 30px 30px; }
+}
+
+html {
+    background: #FF6B35 !important;
+    height: 100% !important;
+}
+
+#canvas {
+    background-color: #30c0df;
+    border: 3px solid #FF6B35;
+    border-radius: 15px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(255, 107, 53, 0.4),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    
+    /* Tilki rengi vurgusu */
+    outline: 2px solid #FFB366;
+    outline-offset: 4px;
+    
+    /* Arka plan resmi üzerinde konumlandırma */
+    position: relative;
+    z-index: 10;
+}
